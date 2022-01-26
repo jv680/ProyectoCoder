@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.template import loader
 
 from Restaurante.models import Reservaciones
@@ -22,9 +22,8 @@ def reservaciones(request):
         nombre = request.POST['nombre']
         contacto = request.POST['contacto']
         Reservaciones.objects.create(nombre=nombre, contacto=contacto)
-        nombre.save()
-        contacto.save()
+    
         
-        return render(request, "ProyectoCoder/Reservaciones.html")
+        return redirect("reservaciones")
     
     return render(request, "Restaurante/Reservaciones.html")
