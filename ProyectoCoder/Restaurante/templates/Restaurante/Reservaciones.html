@@ -1,0 +1,29 @@
+{% extends "Restaurante/padre.html" %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+
+
+<div class="row gx-4 gx-lg-5 align-items-center my-5">
+    <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static '/Restaurante/images/reservaciones.jpg/' %}" alt="..." /></div>
+    <div class="col-lg-5">      
+    </div>
+</div>
+
+<form action="reservaciones" method="POST">{% csrf_token %}
+    <p>Nombre: <input type="text" name="nombre"></p>
+
+    <p>Contacto: <input type="number" name="contacto"></p>
+
+    <input type="submit" value="Enviar">
+
+
+</form>
+<h1>¡¡¡¡Página de reservaciones en construcción!!!!</h1>
+
+{% endblock %}
+
+
+
